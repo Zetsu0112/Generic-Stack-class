@@ -16,6 +16,30 @@ public class Stack <T> {
         topIndex = -1;
     }
 
+    public void push (T value) {
+        if(isFull()) {
+            throw new StackFullException("Stack is Full. Cannot push.");
+        }
+        stackArray[++topIndex] = value;
+    }
+
+    public T pop () {
+        if(isEmpty()) {
+            throw new StackEmptyException("Stack is Empty. Cannot peek.");
+        }
+        T value = (T) stackArray[topIndex];
+        topIndex--;
+        return value;
+    }
+
+
+    public T peek () {
+        if(isEmpty()) {
+            throw new StackEmptyException("Stack is Empty. Cannot peek.");
+        }
+        return (T) stackArray[topIndex];
+    }
+
     public boolean isEmpty() {
         if(topIndex == -1) {
             return true;
