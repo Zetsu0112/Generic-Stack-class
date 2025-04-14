@@ -15,4 +15,23 @@ public class Stack <T> {
         this.stackArray = new Object[maxSize];
         topIndex = -1;
     }
+
+    public boolean isEmpty() {
+        if(topIndex == -1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean isFull() {
+        if(topIndex == maxSize-1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
