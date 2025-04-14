@@ -58,4 +58,15 @@ public class Stack <T> {
         }
     }
 
+    public String list () {
+        String list = "";
+        
+        for(int i = topIndex; i >= 0; i--) {
+            list += stackArray[i];
+            if(i != 0) {
+                list += ";";
+            }
+        }
+        return list;
+    }
 }
